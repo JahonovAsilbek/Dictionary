@@ -15,6 +15,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
+            android:elevation="0dp"
             android:layout_height="wrap_content"
             android:theme="@style/Theme.Dictionary.AppBarOverlay"
             app:layout_constraintTop_toTopOf="parent">
@@ -23,8 +24,20 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:popupTheme="@style/Theme.Dictionary.PopupOverlay" />
+                android:background="@color/red"
+                app:navigationIcon="@drawable/ic_menu"
+                app:popupTheme="@style/Theme.Dictionary.PopupOverlay">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@android:color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -43,10 +56,10 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            app:menu="@menu/activity_main_drawer"
             android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
 
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:menu="@menu/activity_main_drawer" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
