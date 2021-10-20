@@ -34,7 +34,30 @@ class StartFragment : Fragment() {
 
         binding.skip.setOnClickListener {
             startActivity(Intent(binding.root.context, MainActivity::class.java))
+            requireActivity().finish()
         }
+
+        binding.next.setOnClickListener {
+            startActivity(Intent(binding.root.context, MainActivity::class.java))
+            requireActivity().finish()
+        }
+
+        binding.vp.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                if (position == 2) binding.skip.visibility =
+                    View.INVISIBLE else binding.skip.visibility = View.VISIBLE
+                if (position == 2) binding.next.visibility =
+                    View.VISIBLE else binding.next.visibility = View.INVISIBLE
+            }
+
+            override fun onPageSelected(position: Int) {}
+
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
         return binding.root
     }
 }
