@@ -55,14 +55,17 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <AutoCompleteTextView
+            android:id="@+id/search_view"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@null"
             android:hint="Search words"
+            android:imeOptions="actionSearch"
             android:maxLength="20"
             android:maxLines="1"
             android:paddingStart="15dp"
+            android:singleLine="true"
             app:layout_constraintLeft_toRightOf="@id/search_icon"
             app:layout_constraintRight_toLeftOf="@id/mic" />
 
@@ -172,6 +175,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/word">
 
                 <androidx.cardview.widget.CardView
@@ -344,6 +349,16 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_word">
+
+
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
