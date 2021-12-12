@@ -7,15 +7,20 @@
         <entry key="app/src/main/res/drawable-v24/bottom_selected.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable-v24/bottom_unselected.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable-v24/ic_menu.xml" value="0.2125" />
+        <entry key="app/src/main/res/drawable/description_background.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/ic__800.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/ic_copy_paste.xml" value="0.2125" />
+        <entry key="app/src/main/res/drawable/ic_description.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/drawable/ic_history.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/ic_mic.xml" value="0.2125" />
+        <entry key="app/src/main/res/drawable/ic_save.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/drawable/ic_saved.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/ic_share.xml" value="0.2125" />
+        <entry key="app/src/main/res/drawable/ic_text.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/drawable/ic_voice.xml" value="0.2125" />
+        <entry key="app/src/main/res/drawable/meaning_tab.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/drawable/search_back.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/start_vp_back.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/tab_background.xml" value="0.2125" />
@@ -26,7 +31,7 @@
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.19635416666666666" />
-        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_motion.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.19635416666666666" />
@@ -36,6 +41,7 @@
         <entry key="app/src/main/res/layout/motion_constraint.xml" value="0.2453125" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.19635416666666666" />
+        <entry key="app/src/main/res/menu/description_tabs.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/menu/main.xml" value="0.19635416666666666" />
       </map>
     </option>
