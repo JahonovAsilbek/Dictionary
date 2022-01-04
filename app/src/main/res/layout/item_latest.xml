@@ -16,7 +16,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="Hello"
             android:textColor="@android:color/black"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -29,11 +28,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="hello world"
+            android:maxLines="1"
             android:textColor="#bda492"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/save"
             app:layout_constraintTop_toBottomOf="@id/word" />
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -43,7 +43,7 @@
             android:layout_marginEnd="20dp"
             android:background="?selectableItemBackgroundBorderless"
             android:backgroundTint="@android:color/transparent"
-            android:src="@drawable/ic_saved"
+            android:src="@drawable/ic_save"
             android:tint="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"

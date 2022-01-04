@@ -6,28 +6,57 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
+import uz.pdp.dictionary.database.AppDatabase
 import uz.pdp.dictionary.database.models.Dictionary
-import uz.pdp.dictionary.retrofit.ApiClient
+import uz.pdp.dictionary.database.models.History
+import uz.pdp.dictionary.retrofit.ApiHelper
+import uz.pdp.dictionary.utils.Resource
 
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(
+    private val apiHelper: ApiHelper
+) : ViewModel() {
 
-    private val job = SupervisorJob()
-    private val coroutineContext = Dispatchers.Default + job
+    private val words = MutableLiveData<Resource<List<Dictionary>>>()
+    private var latestWords = MutableLiveData<List<History>>()
+    val getDao = AppDatabase.getDatabase().wordDao()
 
-    private val liveData = MutableLiveData<List<Dictionary>>()
-
-    fun fetchWord(word: String): LiveData<List<Dictionary>> {
-        viewModelScope.launch(coroutineContext) {
-            val response = ApiClient.apiService.getWord(word)
-            if (response.isSuccessful) {
-                liveData.postValue(response.body())
-//                Log.d("AAAA", "fetchWord: ${response.body().toString()}")
+    fun getWords(word: String): LiveData<Resource<List<Dictionary>>> {
+        viewModelScope.launch {
+            words.postValue(Resource.loading(null))
+            try {
+                val wordFromApi = apiHelper.getWord(word)
+                words.postValue(Resource.success(wordFromApi))
+            } catch (e: Exception) {
+                words.postValue(Resource.error(e.toString(), null))
             }
         }
-        return liveData
+        return words
     }
+
+    fun getLatest(): LiveData<List<History>> {
+        viewModelScope.launch() {
+            getDao.getAllHistory().distinctUntilChanged().collect {
+                latestWords.value = it
+                Log.d("AAAA", "getLatest: ${it.size}")
+            }
+        }
+        return latestWords
+    }
+
+    fun insertHistory(history: History) {
+        viewModelScope.launch {
+            getDao.insertHistory(history)
+        }
+    }
+
+    fun updateHistory(history: History) {
+        viewModelScope.launch {
+            getDao.updateHistory(history)
+        }
+    }
+
 }
