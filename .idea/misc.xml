@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../.gradle/caches/transforms-3/31b55a8062b65968da623561f0f2f653/transformed/appcompat-1.4.0/res/layout/support_simple_spinner_dropdown_item.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/drawable-v24/bottom_background.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable-v24/bottom_selected.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable-v24/bottom_unselected.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable-v24/ic_menu.xml" value="0.2125" />
+        <entry key="app/src/main/res/drawable-v24/ic_save_main.xml" value="0.2515625" />
         <entry key="app/src/main/res/drawable-v24/ic_saved_back.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable-v24/ic_saved_back_main.xml" value="0.2515625" />
         <entry key="app/src/main/res/drawable/description_background.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/ic__800.xml" value="0.2125" />
         <entry key="app/src/main/res/drawable/ic_copy_paste.xml" value="0.2125" />

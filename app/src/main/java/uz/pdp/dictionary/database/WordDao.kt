@@ -7,7 +7,7 @@ import uz.pdp.dictionary.database.models.History
 @Dao
 interface WordDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertHistory(history: History)
 
     @Query("select * from history")
@@ -18,5 +18,8 @@ interface WordDao {
 
     @Update
     suspend fun updateHistory(history: History)
+
+    @Query("delete from history where word=:word")
+    suspend fun deleteHistory(word: String)
 
 }

@@ -22,6 +22,7 @@ class HomeViewModel(
 
     private val words = MutableLiveData<Resource<List<Dictionary>>>()
     private var latestWords = MutableLiveData<List<History>>()
+    private var savedWords = MutableLiveData<List<History>>()
     val getDao = AppDatabase.getDatabase().wordDao()
 
     fun getWords(word: String): LiveData<Resource<List<Dictionary>>> {
@@ -41,10 +42,18 @@ class HomeViewModel(
         viewModelScope.launch() {
             getDao.getAllHistory().distinctUntilChanged().collect {
                 latestWords.value = it
-                Log.d("AAAA", "getLatest: ${it.size}")
             }
         }
         return latestWords
+    }
+
+    fun getSaved(): LiveData<List<History>> {
+        viewModelScope.launch() {
+            getDao.getAllSaved().distinctUntilChanged().collect {
+                savedWords.value = it
+            }
+        }
+        return savedWords
     }
 
     fun insertHistory(history: History) {
@@ -56,6 +65,12 @@ class HomeViewModel(
     fun updateHistory(history: History) {
         viewModelScope.launch {
             getDao.updateHistory(history)
+        }
+    }
+
+    fun deleteHistory(word: String) {
+        viewModelScope.launch {
+            getDao.deleteHistory(word)
         }
     }
 
